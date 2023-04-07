@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>iCast - Soutcast & Icecast Radio Web Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/icast.min.css" rel="stylesheet" type="text/css">
+<link href="demo_files/demo.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+<div class="top-panel-wpr">
+	<div class="main-wpr">
+	<img src="demo_files/logo.png" class="logo">
+		<div class="top-panel-links">
+			<div class="examples-btn"><a href="#examples">ACHETEZ MAINTENANT</a></div>
+			<div class="buy-btn"><a href="https://codecanyon.net/user/shoutcastapps/portfolio" target="_blank">CONNECTEZ VOUS</a></div>
+		</div>
+	</div>
+</div>
+<div class="banner-wpr">
+	<video autoplay muted loop id="myVideo">
+	  <source src="demo_files/bg.mp4" type="video/mp4">
+	  Your browser does not support HTML5 video.
+	</video>
+	<div class="banner-bg"></div>
+		<div class="banner-ctr">
+			<div class="banner-title1">MA RADIO VERSION 4 </div>
+			<div class="banner-title2">ECOUTEZ LES CHANSONS EN STREAMING! </div>
+			<div class="banner-button"><a href="#examples">ECOUTEZ</a></div>
+		</div>
+	</div>
+
+
+
+
+
+
+<div class="main-wpr">
+	<h2 id="examples">LES CHANSONS</h2>
+	
+	<div class="row">
+	<div class="col-lg-6">
+	<div style="max-width: 440px; text-align: left; font-size: 18px;">
+	AUTEUR 1 - Titre 1<br><br>
+		<div class="icast" id="stream1"></div>
+	</div>
+	</div>
+	<div class="col-lg-6">
+	AUTEUR 2- Titre 2<br><br>
+		<div class="icast" id="stream2"></div>
+	</div>
+</div>
+<br><br>
+<div style="max-width: 440px; text-align: left; font-size: 18px;">
+	AUTEUR 3- Titre 3<br><br>
+		<div class="icast" id="stream2"></div>
+	</div>
+
+	AUTEUR 4- Titre 4<br><br>
+		<div class="icast" id="stream2"></div>
+	</div>
+
+</div>
+<div class="main-wpr" style="font-size: 24px">
+	<div class="contact-btn">fallewi@gmail.com</div>
+</div>
+<div class="footer-wpr">
+	<div class="footer-copy">©2021 par <a href="http://www.shoutcastapps.com" target="a_blank">Fall Lewis</a> - All rights reserved.</div>
+</div>
+
+<script src="js/icast.min.js"></script>
+<script>
+    $("#stream1").icast({
+	    URL: "http://s01.webradio-solutionscast.com:4060",
+		version: "2",
+    })
+</script>
+
+<script>
+    $("#stream2").icast({
+	    URL: "http://149.56.195.94:8416",
+		version: "icecast",
+		mount_point: "autodj",
+		show_listeners: false,
+    })
+</script>
+
+
+</body>
+</html>
