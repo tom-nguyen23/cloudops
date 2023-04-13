@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: imagemedoc 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imagemedoc
+  template:
+    metadata:
+      labels:
+        app: imagemedoc 
+    spec:
+      containers:
+        - name: imagemedoc 
+          image: containerregistry23.azurecr.io/imagemedoc
+          ports:
+          - containerPort: 80
