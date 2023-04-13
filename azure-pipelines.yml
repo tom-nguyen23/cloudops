@@ -83,3 +83,22 @@ stages:
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
+- stage: Test
+  displayName: Test stage
+  dependsOn: Deploy
+
+  jobs:
+  - job: Test
+    displayName: Test
+    pool:
+      vmImage: $(vmImageName)
+      name: Azure Pipelines
+      demands:
+       - agent.name -equals Hosted Agent
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          echo test site joignable
+          curl -i 20.74.8.96
+
